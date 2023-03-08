@@ -2,3 +2,109 @@ body {
     background-color: #192f5e;
     font-family: sans-serif;
 }
+
+.container{
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header{
+    background-color: #fff;
+    padding: 2rem 0;
+}
+
+.menu a{
+    color: #3f3f3f;
+    text-decoration: none;
+    display: block;
+}
+
+.menu a:hover,
+.menu a:active{
+    background-color: gainsboro;
+    border-radius: .25rem;
+}
+
+.menu li{
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+button{
+    border: none;
+    background-color: #fff;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+svg{
+    color: #3f3f3f;
+}
+
+section{
+    color: #fff;
+}
+
+
+/* HIDE THE MENU ONCE ITS HIDDEN IT WILL BE THE DEFAULT */
+/* display property cant be transitioned */
+
+header nav{
+    /* STYLE THIS SO IT WILL OVERLAP THE MAIN CONTENT */
+    /* THIS ELEMENT WILL BE ABSOLUTE TO THE VIEWPORT */
+    /* ADD IN LEFT AnD TOP VALUES LEFT IS 0 TO MATCH THE VIEWPOET WIDTH AND THE HIRGHT INS WHATEVER THE HEADER HEIGHT is */
+    position: absolute;
+    background-color: #fff;
+    width: 100vw;
+    top: 110px;
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out;
+}
+
+/* CREATE A SPECIAL CLASS TO SHOW THE MENU,, THIS IS THE ONLY PURPOSE OF THE CLASS IT WILL ONLY EXSIST IN THE CSS FILE */
+/* NEXT THE JAVASCRIPT WILL ADD THE CLASS FOR US (nav) */
+
+.show-nav{
+max-height: 14.0625rem;}
+
+/* CREATE A MEDIA QUERY AND SHOW THE NAV BY DEFAULT HIDE THE BUTTON AND STYLE HORIZONATL NAV */
+
+@media screen and (min-width: 43.75rem) {
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .toggle-btn{
+        display: none;
+    }
+
+    header nav{
+        max-height: 200px; /*MAYBE*/
+        width: unset;
+        overflow: visible;
+        position: static;
+        padding-bottom: 1rem;
+    }
+
+    ul.menu {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .menu a{
+        padding: 0 .75rem;
+    }
+}
