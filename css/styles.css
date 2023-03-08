@@ -72,6 +72,10 @@ header nav{
     transition: max-height 1s ease-in-out;
 }
 
+li:last-of-type{
+    padding-bottom: 1rem;
+}
+
 /* CREATE A SPECIAL CLASS TO SHOW THE MENU,, THIS IS THE ONLY PURPOSE OF THE CLASS IT WILL ONLY EXSIST IN THE CSS FILE */
 /* NEXT THE JAVASCRIPT WILL ADD THE CLASS FOR US (nav) */
 
@@ -96,7 +100,6 @@ max-height: 14.0625rem;}
         width: unset;
         overflow: visible;
         position: static;
-        padding-bottom: 1rem;
     }
 
     ul.menu {
